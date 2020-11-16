@@ -1,7 +1,5 @@
-name: Template Validation
-
+name: Deploy to GCP
 on: push
-
 jobs:
   gcp-templates:
     runs-on: ubuntu-20.04
@@ -14,6 +12,8 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           export_default_credentials: true
-      - name: Test GCP
-        shell: pwsh
-        run: gcloud info; get-childitem
+      - name: Upload src folder to GCP bucket
+        uses: GoogleCloudPlatform/github-actions/upload-cloud-storage@master
+        with:
+          path: ./src
+          destination: ${{ secrets.GCP_BUCKET_NAME }}
