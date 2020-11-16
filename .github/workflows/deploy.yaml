@@ -1,5 +1,8 @@
 name: Deploy to GCP
-on: push
+on:
+  push:
+    tags:
+      - 'v*'
 jobs:
   gcp-templates:
     runs-on: ubuntu-20.04
