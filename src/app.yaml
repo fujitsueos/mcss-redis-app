@@ -1,0 +1,5 @@
+runtime: python38
+service: mcss-redis-app
+
+env_variables:
+  APP_NAME: 'MCSS Redis App'
