@@ -37,7 +37,7 @@ def GenerateConfig(context):
             },
             'envVariables': {
               'REDISHOST': context.properties['redishost'],
-              'REDISPORT': context.properties['redisport'],
+              'REDISPORT': str(context.properties['redisport']),
               'APP_NAME': base_name
             },
             'vpcAccessConnector': {
