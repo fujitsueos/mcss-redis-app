@@ -3,3 +3,8 @@ service: mcss-redis-app
 
 env_variables:
   APP_NAME: 'MCSS Redis App'
+  REDISHOST: 10.197.128.123
+  REDISPORT: 6379
+
+vpc_access_connector:
+  name: 'projects/<projectId>/locations/<region>/connectors/<your_access_connector_name>'
