@@ -1,0 +1,12 @@
+imports:
+  - path: gcp_app_engine.py
+
+resources:
+  - name: redisapp
+    type: gcp_app_engine.py
+    properties:
+      redishost: 10.197.128.123
+      redisport: '6379'
+      vpc_access_connector: your_access_connector_name
+      bucket_name: your_bucket_name
+      gcpLocation: europe-west3
